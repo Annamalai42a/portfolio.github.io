@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #222;
+    font-family: 'poppins',sans-serif;
+}
+.text{
+    min-width: 40rem;
+    width:max-content;
+    height: 5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.dynamictext span{
+    color:#03d7fd;
+    position: relative;
+    font-weight: 600;
+    font-size: 3rem;
+    cursor:pointer;
+    text-shadow: 0 0 5px #ccc,0 0 15px #03d7fd;
+}
+.dynamictext span::before{
+    content:"";
+    height: 3.8rem;
+    width:0.5rem;
+    position: absolute;
+    top:45%;
+    right:-1rem;
+    background: #03d7fd;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+.dynamictext span.stop-blinking::before{
+    animation: none;
+}
+@keyframes blink{
+    50%{
+        opacity: 0;
+    }
+}

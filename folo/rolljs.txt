@@ -1,0 +1,32 @@
+const dynamictext = document.querySelector(".dynamictext span");
+const words = ["App Developer","Web Developer","UI/UX Designer"];
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typeEffect = () => {
+    const currentWord = words[wordIndex];
+    const currentChar = currentWord.substring(0,charIndex);
+    dynamictext.textContent = currentChar;
+    dynamictext.classList.add("stop-blinking");
+    if(!isDeleting && charIndex < currentWord.length){
+        charIndex++;
+        setTimeout(typeEffect,200);
+
+    }
+    else if(isDeleting && charIndex > 0){
+        charIndex--;
+        setTimeout(typeEffect,100);
+
+    }
+    else{
+        isDeleting = !isDeleting;
+        dynamictext.classList.remove("stop-blinking");
+        wordIndex = !isDeleting ? (wordIndex  + 1)%
+        words.length : wordIndex;
+        setTimeout(typeEffect,1200)
+    }
+
+}
+typeEffect();

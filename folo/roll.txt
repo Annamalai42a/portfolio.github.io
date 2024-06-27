@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="'utf-8">
+        <meta name="viewport" content="width= device-width,initial-scale=1">
+        <link rel="stylesheet" href="r.css">
+    </head>
+    <body>
+        <div class ="text">
+            <p class ="dynamictext"><b>I'm a</b><span></span></p>
+        </div>
+        <script src="s.js"></script>
+    </body>
+        
+
+
+</html>
